@@ -45,7 +45,6 @@ def obtener_info_pedido(lista_tuplas):
     df_join2['Cantidad_us'] = df_join2['Cantidad_us'] * df_join2['Cantidad postres']
     df_join2['Costo parcial'] = df_join2['Costo parcial'] * df_join2['Cantidad postres']
     df_join2['Precio_venta'] = df_join2['Precio_venta'] * df_join2['Cantidad postres']
-    st.dataframe(df_join2)
     df_join2 = df_join2.groupby(['Postre', 'Precio_venta'])['Costo parcial'].sum().reset_index()
     df_join2 = df_join2.rename(columns={'Costo parcial': 'Costo total'})
     df_join2['% de ganancia sobre la venta'] = 100*(df_join2['Precio_venta']-df_join2['Costo total'])/df_join2['Precio_venta']
