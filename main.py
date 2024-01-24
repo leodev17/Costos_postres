@@ -69,7 +69,7 @@ if menu_option == "Ver resumen de los datos":
         st.dataframe(i[['Nombre', 'Cantidad_us']], hide_index=True)
 
 if menu_option == "Visualizar pedido":
-    st.title("Hola")
+    st.title("Calcular pedidos")
     lista_pedidos = []
     dict_postres=df_rec
     option = st.selectbox(
